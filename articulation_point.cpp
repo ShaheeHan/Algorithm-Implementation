@@ -1,11 +1,7 @@
-#include<cstdio>
-#include<cstring>
-#include<iostream>
-#include<queue>
-#include<vector>
-#include<algorithm>
-#include<cmath>
+#include<bits/stdc++.h>
 using namespace std;
+
+
 #define nil -1
 #define inf 10000
 #define mx 1000
@@ -15,8 +11,10 @@ using namespace std;
 vector<int>edge[mx],cost[mx];
 int color[mx],low[mx],f[mx],d[mx];
 int parent[mx+1];
-int time;int e,n;
+int time;
+int e,n;
 bool arti[mx];
+
 void init()
 {
 	for(int i=0;i<n;i++)
@@ -54,7 +52,8 @@ void dfs(int p)
 		else if(v != parent[p])
 			low[p]=min(low[p],d[v]);
 	}
-	color[p]=black;time++;
+	color[p]=black;
+	time++;
 	f[p] =time;
 
 
@@ -71,7 +70,8 @@ int  main()
 		edge[y].push_back(x);
 
 	}
-	init();time=0;
+	init();
+	time=0;
 	for(int i=0;i<n;i++)
 	{
 		if(color[i]==white)
