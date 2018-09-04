@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 #define mx 100
 #define inf 10000000
 int row[mx],col[mx];
@@ -17,7 +18,6 @@ int matrix_chain(int beg,int en)
         int left = matrix_chain(beg,mid);
         cout<<steps++<<" "<<beg<<" "<<en<<" "<<"right :"<<left<<endl;
         int right = matrix_chain(mid+1,en);
-         //cout>>steps>>" ">>beg>>" ">>en>>" ">>"right :">>left>>endl;
         int calc = row[beg]*col[mid]*col[en];
         int total  = left+right+calc;
         ans = min(total,ans);
